@@ -1,3 +1,4 @@
+
 import mysql.connector as mysql, input_file as inp, typewriter as t, dates, login, features
 
 t.typewriter('WELCOME TO YOUR PERSONAL CALENDAR!\n\n\n')
@@ -5,8 +6,8 @@ t.typewriter('WELCOME TO YOUR PERSONAL CALENDAR!\n\n\n')
 (mydb,cursor,loginid)=login.login()
 while True:
     comm1=input('''\n\n
-'v' -> view your calendars\n
-'s' -> open settings\n
+'v' -> view your calendars
+'s' -> open settings
 'e' -> exit the program\nEnter your command here: ''')
     if comm1.lower() in ['v','s','e']:
         if comm1.lower()=='v':
@@ -23,19 +24,21 @@ while True:
             
             while True:
                 comm2=input('''\n\n
-'a' -> access calendar "+str(input_year)+"\n
-'e' -> exit to main menu\n
+'a' -> access calendar '''+str(input_year)+'''
+'e' -> exit to main menu
 Enter your command here: ''')
                 if comm2.lower() in ['a','e']:
                     if comm2.lower()=='a': 
                         while True:
-                            comm3=input('''\n\n'v' -> view all events\n
-                                        'c' -> check events\n
-                                        'a' -> add new events\n
-                                        'u' -> update events\n
-                                        'd' -> delete events\n
-                                        'g' -> go back\n
-                                        Enter your command here: ''')
+                            comm3=input('''\n
+
+'v' -> view all events
+'c' -> check events
+'a' -> add new events
+'u' -> update events
+'d' -> delete events
+'g' -> go back
+Enter your command here: ''')
                             if comm3.lower() in ['v','c','a','u','d','g']:
                                 if comm3.lower()=='c':
                                     features.check(cursor,loginid,input_year)
