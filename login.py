@@ -8,9 +8,9 @@ def login():
                 while True:
                     try:
                         loginid=str(input(t.typewriter('\nEnter your LoginID: ')))
-                        mydb=mysql.connect(host='localhost',
-                                           user='root',
-                                           passwd='30Aug2003',
+                        mydb=mysql.connect(host='__________',
+                                           user='__________',
+                                           passwd='__________',
                                            database=loginid)
                         cursor=mydb.cursor()
                         passwd=input(t.typewriter('Enter your password: '))
@@ -28,7 +28,7 @@ def login():
             if acc.lower()=='no':
                 while True:
                     try:
-                        mydb=mysql.connect(host='localhost',user='root', passwd='30Aug2003')
+                        mydb=mysql.connect(host='__________',user='__________', passwd='__________')
                         cursor=mydb.cursor()
                         while True:
                             loginid=str(input(t.typewriter('\nCreate new LoginID: ')))
@@ -88,9 +88,9 @@ Please try a different LoginID.''')
 def settings(mydb,cursor,loginid):
     while True:
         setting=input(t.typewriter('''\n
-'c' -> change password\n
-'d' -> delete account\n
-'e' -> exit settings\n
+'c' -> change password
+'d' -> delete account
+'e' -> exit settings
 Enter your command here: '''))
         if setting.lower() in ['c','d','e']:
             if setting.lower()=='c':
